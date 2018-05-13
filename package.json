@@ -1,16 +1,18 @@
 {
   "name": "gulp-starter-kit",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "GulpJS + dependencies = 2018 profit",
   "main": "index.js",
   "scripts": {
+    "gulp" : "gulp",
+    "build" : "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "gulp"
   ],
-  "author": "Marcin Krzemiński",
-  "license": "ISC",
+  "author": "Brian Ng",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.17.5",
     "del": "^2.2.2",

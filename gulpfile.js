@@ -1,3 +1,4 @@
+// Gulp modules / dependencies
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var sass = require('gulp-sass');
@@ -13,6 +14,7 @@ var htmlMin = require('gulp-htmlmin');
 var del = require('del');
 var sequence = require('run-sequence');
 
+// All config defined
 var config = {
   dist: 'dist/',
   src: 'src/',
@@ -32,10 +34,25 @@ var config = {
   jsreplaceout: 'js/script.js'
 };
 
+// Gulp - clean and reset for each build / watch
+gulp.task('clean', function() {
+  return del([config.dist]);
+});
+
+// Gulp - build script for 'html' 'js' 'css' 'img' tasks including 'clean'
+gulp.task('build', function() {
+  sequence('clean', ['html', 'js', 'css', 'img']);
+});
+
+// Gulp - default script and using 'serve' task
+gulp.task('default', ['serve']);
+
+// Gulp + Browsersync
 gulp.task('reload', function() {
   browserSync.reload();
 });
 
+// Gulp + Browsersync + SASS
 gulp.task('serve', ['sass'], function() {
   browserSync({
     server: config.src
@@ -45,6 +62,7 @@ gulp.task('serve', ['sass'], function() {
   gulp.watch(config.scssin, ['sass']);
 });
 
+// Gulp + SASS
 gulp.task('sass', function() {
   return gulp.src(config.scssin)
     .pipe(sourcemaps.init())
@@ -57,6 +75,7 @@ gulp.task('sass', function() {
     .pipe(browserSync.stream());
 });
 
+// Gulp - output css from sass
 gulp.task('css', function() {
   return gulp.src(config.cssin)
     .pipe(concat(config.cssoutname))
@@ -64,6 +83,7 @@ gulp.task('css', function() {
     .pipe(gulp.dest(config.cssout));
 });
 
+// Gulp - output JS and minified
 gulp.task('js', function() {
   return gulp.src(config.jsin)
     .pipe(concat(config.jsoutname))
@@ -71,6 +91,7 @@ gulp.task('js', function() {
     .pipe(gulp.dest(config.jsout));
 });
 
+// Gulp - output images and minified / compressed
 gulp.task('img', function() {
   return gulp.src(config.imgin)
     .pipe(changed(config.imgout))
@@ -78,6 +99,7 @@ gulp.task('img', function() {
     .pipe(gulp.dest(config.imgout));
 });
 
+// Gulp - output html
 gulp.task('html', function() {
   return gulp.src(config.htmlin)
     .pipe(htmlReplace({
@@ -91,13 +113,3 @@ gulp.task('html', function() {
     }))
     .pipe(gulp.dest(config.dist))
 });
-
-gulp.task('clean', function() {
-  return del([config.dist]);
-});
-
-gulp.task('build', function() {
-  sequence('clean', ['html', 'js', 'css', 'img']);
-});
-
-gulp.task('default', ['serve']);
