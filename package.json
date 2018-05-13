@@ -4,8 +4,8 @@
   "description": "GulpJS + dependencies = 2018 profit",
   "main": "index.js",
   "scripts": {
-    "gulp" : "gulp",
-    "build" : "gulp build",
+    "gulp": "gulp",
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -14,6 +14,7 @@
   "author": "Brian Ng",
   "license": "MIT",
   "devDependencies": {
+    "bootstrap": "^4.1.1",
     "browser-sync": "^2.17.5",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
@@ -29,5 +30,9 @@
     "gulp-sourcemaps": "1.7.x",
     "gulp-uglify": "^2.0.0",
     "run-sequence": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git:github.com/brifiction/gulp-starter-kit.git"
   }
 }
