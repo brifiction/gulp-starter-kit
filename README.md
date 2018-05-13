@@ -1,36 +1,33 @@
 # gulp-starter-kit
--
-- 
+
+Updates: Included Bootstrap 4
 
 ## Usage
 
 ### 1. Clone repo
 ```
-git clone #
-```
-
-### 2. Go inside cloned repo
-```
+git clone https://github.com/brifiction/gulp-starter-kit.git
 cd gulp-starter-kit
 ```
 
-### 3. Install all dependencies (make sure nodejs with npm is installed on your machine)
+### 2. Install all dependencies (make sure nodejs with npm is installed on your machine)
 ```
 npm install
 ```
 
-### 4. Run default gulp task (will open browser window with live reload)
+### 3. Run default gulp task (will open browser window with live reload)
 ```
 gulp
 ```
 
 ## Build
 
-In order to build the production version of your project run __gulp build__ from the root of cloned repo.
+To build the production version of your project, run __gulp build__ or __node build__ from the root of cloned repo.
 
 ## List of npm packaged used
 
 - gulp
+- bootstrap
 - browser-sync
 - gulp-sass
 - gulp-sourcemaps
@@ -44,5 +41,3 @@ In order to build the production version of your project run __gulp build__ from
 - gulp-htlmin
 - del
 - run-sequence
-
-Big thanks to all the authors of these packages :heart:
