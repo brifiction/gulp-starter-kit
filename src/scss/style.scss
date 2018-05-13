@@ -1,14 +1,5 @@
 @import "settings";
 
-body {
-  padding-top: $padding-top-body;
-}
-@media (min-width: 992px) {
-  body {
-    padding-top: $padding-top-media;
-  }
-}
-
 .carousel-item {
   height: 65vh;
   min-height: 300px;

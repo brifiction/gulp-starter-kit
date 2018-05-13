@@ -23,11 +23,15 @@ var config = {
   imgin: 'src/img/**/*.{jpg,jpeg,png,gif}',
   htmlin: 'src/*.html',
   scssin: 'src/scss/**/*.scss',
+  fontscssin: 'node_modules/font-awesome/css/font-awesome.*',
+  fontsin: 'node_modules/font-awesome/fonts/fontawesome-webfont.*',
   cssout: 'dist/css/',
   jsout: 'dist/js/',
   imgout: 'dist/img/',
   htmlout: 'dist/',
   scssout: 'src/css/',
+  fontscssout: 'src/css/',
+  fontsout: 'src/fonts/',
   cssoutname: 'style.css',
   jsoutname: 'script.js',
   cssreplaceout: 'css/style.css',
@@ -45,7 +49,7 @@ gulp.task('build', function() {
 });
 
 // Gulp - default script and using 'serve' task
-gulp.task('default', ['serve']);
+gulp.task('default', ['serve', 'fonts']);
 
 // Gulp + Browsersync
 gulp.task('reload', function() {
@@ -112,4 +116,10 @@ gulp.task('html', function() {
       collapseWhitespace: true
     }))
     .pipe(gulp.dest(config.dist))
+});
+
+// Gulp - output / retrieve font-awesome fonts
+gulp.task('fonts', function() {
+  return gulp.src([config.fontsin, config.fontscssin])
+    .pipe(gulp.dest(config.fontsout));
 });
