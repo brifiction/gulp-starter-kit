@@ -23,13 +23,17 @@ var config = {
   imgin: 'src/img/**/*.{jpg,jpeg,png,gif}',
   htmlin: 'src/*.html',
   scssin: 'src/scss/**/*.scss',
+  bootstrapscssin: 'node_modules/bootstrap/scss/**',
   fontscssin: 'node_modules/font-awesome/css/font-awesome.*',
   fontsin: 'node_modules/font-awesome/fonts/fontawesome-webfont.*',
+  videosin: 'src/videos/**',
   cssout: 'dist/css/',
   jsout: 'dist/js/',
   imgout: 'dist/img/',
   htmlout: 'dist/',
+  videosout: 'dist/videos/',
   scssout: 'src/css/',
+  bootstrapscssout: 'src/scss/',
   fontscssout: 'src/css/',
   fontsout: 'src/fonts/',
   cssoutname: 'style.css',
@@ -45,7 +49,7 @@ gulp.task('clean', function() {
 
 // Gulp - build script for 'html' 'js' 'css' 'img' tasks including 'clean'
 gulp.task('build', function() {
-  sequence('clean', ['html', 'js', 'css', 'img']);
+  sequence('clean', ['html', 'js', 'css', 'img', 'videos']);
 });
 
 // Gulp - default script and using 'serve' task
@@ -118,8 +122,22 @@ gulp.task('html', function() {
     .pipe(gulp.dest(config.dist))
 });
 
+// Gulp - output / retrieve bootstrap sass
+// ** Only use this for manual first-time load bootstrap sass
+// WIP solution
+gulp.task('bootstrap-sass', function() {
+  return gulp.src(config.bootstrapscssin)
+    .pipe(gulp.dest(config.bootstrapscssout));
+});
+
 // Gulp - output / retrieve font-awesome fonts
 gulp.task('fonts', function() {
   return gulp.src([config.fontsin, config.fontscssin])
     .pipe(gulp.dest(config.fontsout));
+});
+
+// Gulp - output / retrieve videos
+gulp.task('videos', function() {
+  return gulp.src(config.videosin)
+    .pipe(gulp.dest(config.videosout));
 });
