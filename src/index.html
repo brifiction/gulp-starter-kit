@@ -7,17 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- Font-Awesome CSS -->
   <link rel="stylesheet" href="fonts/font-awesome.css">
   <!-- build:css -->
-  <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
   <!-- endbuild -->
   <title>GulpJS Starter Kit</title>
 </head>
 
 <body>
-
 
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -77,6 +76,20 @@
   </nav>
 
   <header>
+    <div class="homepage-hero-module">
+      <div class="video-container">
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth" poster="videos/South_Carolina_City.jpg">
+          <source src="videos/South_Carolina_City.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          <source src="videos/South_Carolina_City.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <div class="video-annotation-layer bg-overlay">
+          <div id="video-annotation-1">Welcome to the GulpJS Starter Kit</div>
+          <div id="video-annotation-2">If you'd like to know more, check out some GulpJS dependencies and packages.</div>
+        </div>
+      </div>
+    </div>
+    </div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -118,7 +131,7 @@
   </header>
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container pt-5">
 
     <h1 class="my-4">Welcome to GulpJS Starter Kit</h1>
 
