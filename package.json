@@ -27,13 +27,18 @@
     "gulp-html-replace": "^1.6.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.0.3",
+    "gulp-nunjucks-render": "^2.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "1.7.x",
     "gulp-uglify": "^2.0.0",
+    "nunjucks": "^3.1.2",
     "run-sequence": "^1.2.2"
   },
   "repository": {
     "type": "git",
     "url": "git:github.com/brifiction/gulp-starter-kit.git"
+  },
+  "dependencies": {
+    "nunjucks": "^3.1.2"
   }
 }
