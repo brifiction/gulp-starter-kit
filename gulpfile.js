@@ -13,9 +13,8 @@ var htmlReplace = require('gulp-html-replace');
 var htmlMin = require('gulp-htmlmin');
 var del = require('del');
 var sequence = require('run-sequence');
-
-// Nunjucks - for partials
 var nunjucksRender = require('gulp-nunjucks-render');
+var gulpdata = require('gulp-data');
 
 // All config defined
 var config = {
@@ -30,7 +29,7 @@ var config = {
   fontscssin: 'node_modules/font-awesome/css/font-awesome.*',
   fontsin: 'node_modules/font-awesome/fonts/fontawesome-webfont.*',
   videosin: 'src/videos/**',
-  nunjucksin : 'src/pages/**/*.+(html|partials)',
+  nunjucksin: 'src/pages/**/*.+(html|partials)',
   cssout: 'dist/css/',
   jsout: 'dist/js/',
   imgout: 'dist/img/',
@@ -151,10 +150,14 @@ gulp.task('videos', function() {
 gulp.task('nunjucks', function() {
   // Gets .html and .partials files in pages - stored in pages folder
   return gulp.src(config.nunjucksin)
-  // Renders template with nunjucks
-  .pipe(nunjucksRender({
+    // Adding data to Nunjucks
+    .pipe(gulpdata(function() {
+      return require('./src/data.json')
+    }))
+    // Renders template with nunjucks
+    .pipe(nunjucksRender({
       path: ['src/templates']
     }))
-  // output files in src folder
-  .pipe(gulp.dest(config.src))
+    // output files in src folder
+    .pipe(gulp.dest(config.src))
 });

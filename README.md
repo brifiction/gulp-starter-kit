@@ -1,6 +1,11 @@
 # gulp-starter-kit
 
-Updates: Included Bootstrap 4
+Updates
+- included Bootstrap 4 (2018)
+```
+npm install bootstrap --save
+npm install bootstrap --save-dev
+```
 
 ## Usage
 
@@ -15,7 +20,7 @@ cd gulp-starter-kit
 npm install
 ```
 
-### 3. Run default gulp task (will open browser window with live reload)
+### 3. Run default gulp task (will open browser window with live reload - using browser-sync)
 ```
 gulp
 ```
@@ -41,3 +46,5 @@ To build the production version of your project, run __gulp build__ or __node bu
 - gulp-htlmin
 - del
 - run-sequence
+- gulp-nunjucks-render
+- gulp-data

@@ -22,9 +22,6 @@
 
 <body>
 
-  <!-- Adds the navigation partial -->
-  {% include "templates/partials/navigation.partials" %}
-
   <!-- You write code for this content block in another file -->
   {% block content %} {% endblock %}
 
