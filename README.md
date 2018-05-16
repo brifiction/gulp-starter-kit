@@ -50,7 +50,40 @@ gulp
 
 ## Build
 
-To build the production version of your project, run __gulp build__ or __node build__ from the root of cloned repo.
+File structure should look like this:
+
+.
++-- dist
++-- node_modules
++-- src
+|   +-- css
+|   +-- fonts
+|   +-- js
+|   +-- pages
+|   +-- scss
+|   +-- templates
+|   |   +--macros
+|   |   +--partials
+|   +-- videos
++-- index.html
++-- ...
++-- ...
++-- ...
++-- ...
++-- .gitignore
++-- gulpfile.js
++-- package.json
++-- README.md
+
+To build the production version of your project, run __gulp build__ or __node build__ from the main repo.
+
+### Additional Notes:
+
+Run __gulp bootstrap-sass__ only __once__, to bring all bootstrap sass files from node_modules.
+
+To use nunjucks, run manually __gulp nunjucks__ in a separate / same terminal being used.
+
+If you're not a fan of nunjucks, you can always remove it. The file structure will have to change as well, removing 'templates', 'partials' and 'macros'.
 
 ## Other Manual Builds
 
@@ -89,12 +122,7 @@ gulp.task('serve', ['sass'], function() {
 });
 ```
 
-
-Run __gulp bootstrap-sass__ once, to bring all bootstrap sass files from node_modules.
-
-To use nunjucks, run manually __gulp nunjucks__ in a separate / same terminal being used.
-
-## List of npm packaged used
+## List of npm packages used
 
 - gulp
 - bootstrap
