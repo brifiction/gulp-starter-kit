@@ -51,7 +51,7 @@ gulp
 ## Build
 
 File structure should look like this:
-
+```
 .
 +-- dist
 +-- node_modules
@@ -74,6 +74,7 @@ File structure should look like this:
 +-- gulpfile.js
 +-- package.json
 +-- README.md
+```
 
 To build the production version of your project, run __gulp build__ or __node build__ from the main repo.
 
